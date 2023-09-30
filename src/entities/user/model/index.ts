@@ -1,2 +1,2 @@
-export { fetchUserFx, checkUserFx } from "./userEffects";
+export { fetchUserFx, createUserFx } from "./userEffects";
 export { $user } from "./user";

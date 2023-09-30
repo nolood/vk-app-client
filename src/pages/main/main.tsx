@@ -1,5 +1,6 @@
 import React, { MouseEventHandler } from "react";
-import { Panel } from "@vkontakte/vkui";
+import { Button, Panel } from "@vkontakte/vkui";
+import { api } from "../../shared/api";
 
 const Main = ({
   id,
@@ -8,7 +9,16 @@ const Main = ({
   id: string;
   go: MouseEventHandler<HTMLElement>;
 }) => {
-  return <Panel id={id}>Main</Panel>;
+  const test = async () => {
+    await api.get("users");
+  };
+
+  return (
+    <Panel id={id}>
+      Main
+      <Button onClick={test}>Click</Button>
+    </Panel>
+  );
 };
 
 export default Main;
