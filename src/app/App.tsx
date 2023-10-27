@@ -13,17 +13,26 @@ import {
   ConfigProvider,
   SplitLayout,
   SplitCol,
+  Panel,
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 
 import Home from "../pages/Home";
 import Persik from "../pages/Persik";
 import { fetchUserFx } from "../entities/user/model";
-import { OnBoardingSlide1, OnBoardingSlide2 } from "../pages";
-import Main from "../pages/main/main";
+import {
+  CreateEvaluations,
+  OnBoardingSlide1,
+  OnBoardingSlide2,
+} from "../pages";
+import Main from "../pages/main";
+import "./styles/globals.css";
+import { useStore } from "effector-react";
+import { $activePanel } from "../entities/panel/model/panel";
+import { routes } from "./routes";
 
 const App = () => {
-  const [activePanel, setActivePanel] = useState("main");
+  const activePanel = useStore($activePanel);
   const [fetchedUser, setUser] = useState<UserInfo | undefined>();
   const [popout, setPopout] = useState<ReactNode | null>(
     <ScreenSpinner size="large" />,
@@ -40,11 +49,6 @@ const App = () => {
     setPopout(null);
   }, []);
 
-  const go: MouseEventHandler<HTMLElement> = (e) => {
-    setActivePanel(e.currentTarget.dataset.to ?? "main");
-    console.log(fetchedUser);
-  };
-
   return (
     <ConfigProvider>
       <AdaptivityProvider>
@@ -52,11 +56,11 @@ const App = () => {
           <SplitLayout popout={popout}>
             <SplitCol>
               <View activePanel={activePanel}>
-                <Home id="home" fetchedUser={fetchedUser} go={go} />
-                <Persik id="persik" go={go} />
-                <Main id="main" go={go} />
-                <OnBoardingSlide1 id="slide1" go={go} />
-                <OnBoardingSlide2 id="slide2" go={go} />
+                {routes.map(({ path, Component }) => (
+                  <Panel id={path}>
+                    <Component key={path} />
+                  </Panel>
+                ))}
               </View>
             </SplitCol>
           </SplitLayout>
