@@ -5,6 +5,8 @@ import {
   changeCriterionName,
   deleteCriterion,
 } from "../lib/criteria-events";
+import { Input } from "../../../shared/ui";
+import { ChangeEvent } from "react";
 
 const CriteriaAdd = () => {
   const criteria = useStore($criteria);
@@ -23,24 +25,37 @@ const CriteriaAdd = () => {
 
   return (
     <div>
-      <p className="mb-[20px]">Критерии:</p>
+      <p className="mb-[20px] text-text text-[20px]">Критерии:</p>
       <ul className="flex flex-col gap-[10px]">
         {criteria.map((item) => (
-          <li className={"flex gap-[10px]"} key={item.id}>
-            <span onClick={() => handleDelete(item)}>&#10006;</span>
-            <input
-              onChange={(e) =>
+          <li
+            className={
+              "flex items-center gap-[10px] w-full text-text text-[20px]"
+            }
+            key={item.id}
+          >
+            <span
+              className={"cursor-pointer"}
+              onClick={() => handleDelete(item)}
+            >
+              &#10006;
+            </span>
+            <Input
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 handleChangeName({ ...item, title: e.target.value })
               }
               value={item.title}
-              type="text"
               placeholder={"Название критерия"}
+              className={"w-full"}
             />
           </li>
         ))}
-        <li onClick={handleAdd} className="flex gap-[10px] cursor-pointer">
+        <li
+          onClick={handleAdd}
+          className="flex gap-[10px] cursor-pointer text-text text-[20px] w-max"
+        >
           <span>&#10010;</span>
-          <p>Добавить ещё</p>
+          <p>Добавить критерий</p>
         </li>
       </ul>
     </div>

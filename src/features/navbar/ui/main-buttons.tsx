@@ -1,21 +1,13 @@
+import { Button } from "../../../shared/ui";
+
 const MainButtons = () => {
   return (
-    <div className="flex flex-col">
-      <div className={"grid grid-cols-2 gap-y-[10px] gap-x-[20px] my-[10px]"}>
-        <button className={"h-[50px] rounded-[24px] bg-slate-600"}>
-          Маскот
-        </button>
-        <button className={"h-[50px] rounded-[24px] bg-slate-600"}>
-          Созвездия
-        </button>
-        <button className={"h-[50px] rounded-[24px] bg-slate-600"}>
-          Пройденные оценивания
-        </button>
-        <button className={"h-[50px] rounded-[24px] bg-slate-600"}>
-          Мои оценивания
-        </button>
+    <div className="flex flex-col w-full gap-[12px] mt-[16px]">
+      <div className={"flex gap-[30px]"}>
+        <Button className={"w-full"}>Маскот</Button>
+        <Button className={"w-full"}>Созвездия</Button>
       </div>
-      <button className={"h-[50px] rounded-[24px] bg-slate-600"}>Небо</button>
+      <Button>Небо</Button>
     </div>
   );
 };

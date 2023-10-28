@@ -57,7 +57,7 @@ const App = () => {
             <SplitCol>
               <View activePanel={activePanel}>
                 {routes.map(({ path, Component }) => (
-                  <Panel id={path}>
+                  <Panel className={"h-screen w-screen"} id={path}>
                     <Component key={path} />
                   </Panel>
                 ))}

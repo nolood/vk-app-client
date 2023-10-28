@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react";
 
 const MainMascot = () => {
-  return <div className="min-h-[330px] w-full bg-slate-950"></div>;
+  return <div className="bg-sky h-screen w-full absolute z-[0]"></div>;
 };
 
 export default MainMascot;

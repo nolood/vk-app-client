@@ -1,0 +1,19 @@
+html[data-theme="dark"] {
+    --bg: #404980;
+    --sky: #262B4D;
+    --el-light-bg: #999FC6;
+    --el-dark-bg: #404772;
+    --el-light-border: #7A81AC;
+    --text: #FFFFFF;
+    --bg-secondary: #616BA8;
+    --bg-input-hover: #A7AED4;
+    --input-active-border: #B9C3FF;
+    --btn-dark-hover: #555C8D;
+    --btn-dark-active: #3C4268;
+    --btn-light-hover: #7A81AC;
+    --btn-light-active: #646DA4;
+}
+
+html[data-theme="light"] {
+    --button-bg: #fff;
+}

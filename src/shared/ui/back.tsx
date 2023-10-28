@@ -4,7 +4,7 @@ const Back = ({ to }: { to: string }) => {
   return (
     <button
       className={
-        "bg-transparent text-[20px] py-[10px] px-[20px] border-none outline-none"
+        "bg-transparent text-[20px] py-[10px] border-none outline-none"
       }
       onClick={() => setActivePanel(to)}
     >

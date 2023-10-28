@@ -3,13 +3,11 @@ import { MainButtons } from "../../../features/navbar/ui";
 
 const MainControls = () => {
   return (
-    <div
-      className={
-        "bg-neutral-400 mt-[-70px] rounded-t-[40px] px-[100px] py-[20px]"
-      }
-    >
-      <MainEvaluationForm />
-      <MainButtons />
+    <div className="w-full flex items-center justify-center bg-bg py-[30px] rounded-t-[30px] mt-auto z-[1]">
+      <div className="w-10/12">
+        <MainEvaluationForm />
+        <MainButtons />
+      </div>
     </div>
   );
 };
