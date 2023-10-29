@@ -1,0 +1,33 @@
+
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: var(--el-light-bg);
+}
+
+.custom-checkbox:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-image: url("../ui/icons/mark.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s ease;
+}
+
+.real-checkbox:checked + .custom-checkbox:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.checkbox:hover > .custom-checkbox {
+    background-color: var(--bg-input-hover);
+    transition: 0.2s ease;
+}

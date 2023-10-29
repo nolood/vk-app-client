@@ -21,7 +21,11 @@ module.exports = {
       btnLightActive: "var(--btn-light-active)",
       transparent: "transparent",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        mark: "url('../../shared/ui/icons/mark.svg')",
+      },
+    },
   },
   plugins: [],
 };

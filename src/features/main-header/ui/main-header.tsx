@@ -1,7 +1,7 @@
-import { Star } from "./icons";
-import Balance from "./balance";
+import { Star } from "../../../shared/ui/icons";
+import Balance from "../../../shared/ui/balance";
 
-const Header = () => {
+const MainHeader = () => {
   return (
     <div
       className={
@@ -16,4 +16,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MainHeader;

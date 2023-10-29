@@ -25,9 +25,6 @@ const ChipsSelect = ({
 
   const handleShowDropDown = useCallback(() => {
     setIsDropdownVisible(true);
-    if (onDropDownVisibleChange) {
-      onDropDownVisibleChange(true);
-    }
   }, []);
 
   const handleSelect = (item: Item, isSelected: boolean) => {
@@ -47,6 +44,12 @@ const ChipsSelect = ({
       onSelectedChange(selectedItems);
     }
   }, [selectedItems]);
+
+  useEffect(() => {
+    if (onDropDownVisibleChange) {
+      onDropDownVisibleChange(isDropdownVisible);
+    }
+  }, [isDropdownVisible]);
 
   useEffect(() => {
     const clickOutside = (event: MouseEvent) => {
