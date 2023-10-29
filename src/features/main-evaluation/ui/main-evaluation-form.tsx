@@ -1,6 +1,4 @@
 import { FormEvent } from "react";
-import InputMask from "react-input-mask";
-import { setActivePanel } from "../../../entities/panel/lib/panel-events";
 import { EVALUATION_CREATE_ROUTE } from "../../../app/paths";
 import { Button, MaskInput } from "../../../shared/ui";
 const MainEvaluationForm = () => {
@@ -21,9 +19,7 @@ const MainEvaluationForm = () => {
       <div className="flex flex-col gap-[20px]">
         <MaskInput mask={"* * *  * * *"} />
         <Button variant={"dark"}>Пройти оценивание</Button>
-        <Button onClick={() => setActivePanel(EVALUATION_CREATE_ROUTE)}>
-          Создать оценивание
-        </Button>
+        <Button to={EVALUATION_CREATE_ROUTE}>Создать оценивание</Button>
       </div>
     </form>
   );

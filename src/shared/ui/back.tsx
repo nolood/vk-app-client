@@ -1,12 +1,13 @@
-import { setActivePanel } from "../../entities/panel/lib/panel-events";
+import { useNavigate } from "react-router-dom";
 
-const Back = ({ to }: { to: string }) => {
+const Back = () => {
+  const navigate = useNavigate();
   return (
     <button
       className={
         "bg-transparent text-[20px] py-[10px] border-none outline-none"
       }
-      onClick={() => setActivePanel(to)}
+      onClick={() => navigate(-1)}
     >
       Назад
     </button>

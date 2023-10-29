@@ -5,11 +5,16 @@ export const api = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
+export const apiFormData = axios.create({
+  baseURL: `http://localhost:5000`,
+  headers: { "Content-Type": "multipart/form-data" },
+});
+
 export const setUserIdToHeaders = (userId: number) => {
   const newHeaders = {
     ...api.defaults.headers.common,
     "X-User-Id": userId,
   };
-  console.log(newHeaders);
   api.defaults.headers.common = { ...newHeaders };
+  apiFormData.defaults.headers.common = { ...newHeaders };
 };

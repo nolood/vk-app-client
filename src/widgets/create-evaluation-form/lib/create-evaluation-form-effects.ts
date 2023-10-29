@@ -1,6 +1,6 @@
 import { createEffect } from "effector";
 import { CreateEvaluation } from "../model/create-evaluation-form";
-import { api } from "../../../shared/api";
+import { apiFormData } from "../../../shared/api/api";
 
 export const createEvaluationFormFx = createEffect<CreateEvaluation, void>(
   async (params) => {
@@ -17,8 +17,6 @@ export const createEvaluationFormFx = createEffect<CreateEvaluation, void>(
       formData.append("image", params.image);
     }
 
-    console.log(params.image);
-
-    await api.post("/evaluations/create", formData);
+    await apiFormData.post("/evaluations/create", formData);
   },
 );

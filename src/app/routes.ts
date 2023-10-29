@@ -1,5 +1,9 @@
-import { EVALUATION_CREATE_ROUTE, MAIN_ROUTE } from "./paths";
-import { CreateEvaluations, MainPage } from "../pages";
+import {
+  EVALUATION_CREATE_RESULT_ROUTE,
+  EVALUATION_CREATE_ROUTE,
+  MAIN_ROUTE,
+} from "./paths";
+import { CreateEvaluation, CreateEvaluationResult, MainPage } from "../pages";
 
 export const routes = [
   {
@@ -8,6 +12,10 @@ export const routes = [
   },
   {
     path: EVALUATION_CREATE_ROUTE,
-    Component: CreateEvaluations,
+    Component: CreateEvaluation,
+  },
+  {
+    path: EVALUATION_CREATE_RESULT_ROUTE,
+    Component: CreateEvaluationResult,
   },
 ];

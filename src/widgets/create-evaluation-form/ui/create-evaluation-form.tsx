@@ -38,7 +38,7 @@ const CreateEvaluationForm = () => {
   return (
     <div className="w-full pb-[20px] pl-[20px] pr-[35px]">
       <div className="w-full mb-[20px] flex items-center justify-between">
-        <Back to={MAIN_ROUTE} />
+        <Back />
         <Balance variant={"light"} />
       </div>
       <form onSubmit={onSubmit} className="flex flex-col gap-[20px]">
