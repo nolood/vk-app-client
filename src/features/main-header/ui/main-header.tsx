@@ -1,4 +1,4 @@
-import { Star } from "../../../shared/ui/icons";
+import { StarIcon } from "../../../shared/ui/icons";
 import Balance from "../../../shared/ui/balance";
 
 const MainHeader = () => {

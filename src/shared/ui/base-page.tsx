@@ -11,7 +11,7 @@ const BasePage = ({
   return (
     <div
       className={clsx(
-        "w-screen h-screen flex flex-col items-center bg-bg",
+        "w-screen h-screen flex flex-col items-center bg-bg px-[20px]",
         className,
       )}
     >

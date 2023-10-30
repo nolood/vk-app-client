@@ -15,7 +15,7 @@ const Button = ({
   className,
   children,
   variant = "light",
-  htmlType = 'button',
+  htmlType = "button",
   to,
   ...rest
 }: ButtonProps) => {
@@ -27,7 +27,7 @@ const Button = ({
         variant === "light"
           ? "bg-elLightBg border border-solid border-elLightBorder hover:bg-btnLightHover active:bg-btnLightActive transition"
           : "bg-elDarkBg hover:bg-btnDarkHover active:bg-btnDarkActive transition",
-        "flex items-center justify-center rounded-[36px] text-center text-text py-[16px] px-[20px] text-default w-full",
+        "flex items-center justify-center rounded-[36px] text-center text-text py-[16px] px-[20px] text-default w-full cursor-pointer",
         className,
       )}
     >

@@ -1,4 +1,4 @@
-import { Star } from "./icons";
+import { StarIcon } from "./icons";
 import clsx from "clsx";
 
 const Balance = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
@@ -10,7 +10,7 @@ const Balance = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
       )}
     >
       <span className="text-text font-bold text-[20px]">1000</span>
-      <Star />
+      <StarIcon />
     </div>
   );
 };

@@ -1,2 +1,3 @@
-export { default as Star } from "./star";
-export { default as Plus } from "./plus";
+export { default as StarIcon } from "./star";
+export { default as PlusIcon } from "./plus";
+export { default as FiltersIcon } from "./filters";

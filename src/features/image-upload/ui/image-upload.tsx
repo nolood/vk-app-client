@@ -1,4 +1,4 @@
-import { Plus } from "../../../shared/ui/icons";
+import { PlusIcon } from "../../../shared/ui/icons";
 import { useEffect, useState } from "react";
 
 interface ImageUploadProps {
@@ -21,20 +21,22 @@ const ImageUpload = ({ onChange, image }: ImageUploadProps) => {
       <span className={"text-text text-[20px] mb-[10px]"}>
         Выберите файл с изображением
       </span>
-      <Plus />
+      <PlusIcon />
       <input
         className="w-full h-full absolute top-0 left-0 opacity-0 z-[5]"
         type="file"
         accept=".jpg, .jpeg, .png, .webp"
         onChange={(e) => onChange(e.target.files ? e.target.files[0] : null)}
       />
-      <img
-        className={
-          "w-full h-full object-cover absolute top-0 left-0 z-4 rounded-[26px]"
-        }
-        src={localImage}
-        alt=""
-      />
+      {localImage && (
+        <img
+          className={
+            "w-full h-full object-cover absolute top-0 left-0 z-4 rounded-[26px]"
+          }
+          src={localImage}
+          alt=""
+        />
+      )}
     </div>
   );
 };
