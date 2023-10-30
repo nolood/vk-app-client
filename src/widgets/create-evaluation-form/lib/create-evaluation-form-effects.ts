@@ -1,10 +1,12 @@
 import { createEffect } from "effector";
-import { CreateEvaluation } from "../model/create-evaluation-form";
 import { apiFormData } from "../../../shared/api/api";
+import { CreateEvaluation } from "../model/create-evaluation-form";
+import router from "../../../shared/router/router";
+import { EVALUATION_CREATE_RESULT_ROUTE } from "../../../app/paths";
 
 export const createEvaluationFormFx = createEffect<CreateEvaluation, void>(
   async (params) => {
-    const categories = params.categories.map((c) => c.label);
+    const categories = params.categories.map((c) => c.value);
     const criteria = params.criteria.map((c) => c.title);
 
     const formData = new FormData();
@@ -17,6 +19,10 @@ export const createEvaluationFormFx = createEffect<CreateEvaluation, void>(
       formData.append("image", params.image);
     }
 
-    await apiFormData.post("/evaluations/create", formData);
+    const data = await apiFormData.post("/evaluations/create", formData);
+
+    router.navigate(
+      EVALUATION_CREATE_RESULT_ROUTE + "/" + data.data.code.value,
+    );
   },
 );

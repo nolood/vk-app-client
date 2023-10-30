@@ -1,7 +1,10 @@
 import { FormEvent } from "react";
 import { EVALUATION_CREATE_ROUTE } from "../../../app/paths";
 import { Button, MaskInput } from "../../../shared/ui";
+import {useNavigate} from "react-router-dom";
 const MainEvaluationForm = () => {
+
+  const navigate = useNavigate();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
@@ -19,7 +22,7 @@ const MainEvaluationForm = () => {
       <div className="flex flex-col gap-[20px]">
         <MaskInput mask={"* * *  * * *"} />
         <Button variant={"dark"}>Пройти оценивание</Button>
-        <Button to={EVALUATION_CREATE_ROUTE}>Создать оценивание</Button>
+        <Button onClick={() => navigate(EVALUATION_CREATE_ROUTE)}>Создать оценивание</Button>
       </div>
     </form>
   );

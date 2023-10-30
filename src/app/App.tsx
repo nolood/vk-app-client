@@ -1,26 +1,18 @@
-import React, {
-  useState,
-  useEffect,
-  ReactNode,
-  MouseEventHandler,
-} from "react";
-import bridge, { UserInfo } from "@vkontakte/vk-bridge";
+import React, { useState, useEffect, ReactNode } from "react";
 import {
-  View,
   ScreenSpinner,
   AdaptivityProvider,
   AppRoot,
   ConfigProvider,
   SplitLayout,
   SplitCol,
-  Panel,
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 
 import { fetchUserFx } from "../entities/user/model";
 import "./styles/globals.css";
-import { routes } from "./routes";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import router from "../shared/router/router";
 
 const App = () => {
   const [popout, setPopout] = useState<ReactNode | null>(
@@ -45,13 +37,14 @@ const App = () => {
               {/*  </Panel>*/}
               {/*))}*/}
               {/*</View>*/}
-              <BrowserRouter>
-                <Routes>
-                  {routes.map(({ path, Component }) => (
-                    <Route key={path} path={path} element={<Component />} />
-                  ))}
-                </Routes>
-              </BrowserRouter>
+              {/*<BrowserRouter>*/}
+              {/*  <Routes>*/}
+              {/*    {routes.map(({ path, Component }) => (*/}
+              {/*      <Route key={path} path={path} element={<Component />} />*/}
+              {/*    ))}*/}
+              {/*  </Routes>*/}
+              {/*</BrowserRouter>*/}
+              <RouterProvider router={router} />
             </SplitCol>
           </SplitLayout>
         </AppRoot>

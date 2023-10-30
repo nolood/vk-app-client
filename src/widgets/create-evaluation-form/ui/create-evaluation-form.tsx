@@ -1,5 +1,4 @@
 import Back from "../../../shared/ui/back";
-import { MAIN_ROUTE } from "../../../app/paths";
 import CriteriaAdd from "../../../features/criteria-add/ui/criteria-add";
 import { Button, ChipsSelect, Input, TextArea } from "../../../shared/ui";
 import Balance from "../../../shared/ui/balance";
@@ -14,6 +13,8 @@ import { useForm } from "effector-forms";
 import { createEvaluationForm } from "../model/create-evaluation-form";
 import { useStore } from "effector-react";
 import { $criteria } from "../../../features/criteria-add/model/criteria";
+import { useNavigate } from "react-router-dom";
+import { EVALUATION_CREATE_RESULT_ROUTE } from "../../../app/paths";
 
 const CreateEvaluationForm = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -82,7 +83,7 @@ const CreateEvaluationForm = () => {
         >
           Приватное оценивание
         </Checkbox>
-        <Button>Создать оценивание</Button>
+        <Button htmlType={"submit"}>Создать оценивание</Button>
       </form>
     </div>
   );
