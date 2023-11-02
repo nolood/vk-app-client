@@ -4,9 +4,11 @@ import clsx from "clsx";
 interface MaskInputProps {
   mask: string;
   className?: string;
+  value?: string;
+  onChange: (value: string) => void;
 }
 
-const MaskInput = ({ mask, className }: MaskInputProps) => {
+const MaskInput = ({ mask, className, onChange, value }: MaskInputProps) => {
   return (
     <InputMask
       mask={mask}
@@ -15,6 +17,8 @@ const MaskInput = ({ mask, className }: MaskInputProps) => {
         className,
       )}
       alwaysShowMask
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
     />
   );
 };

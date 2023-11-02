@@ -8,7 +8,8 @@ export const fetchEvaluationsFx = createEffect<
 >(async ({ page, limit, categories }) => {
   const res = await api.post<EvaluationListItem[]>(
     `/evaluations/all?page=${page}&limit=${limit}`,
-    { categories: ["08942672-4a0a-44b0-91be-f0654d2ef18e"] },
+    { categories },
   );
+
   return res.data;
 });

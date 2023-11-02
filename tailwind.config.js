@@ -20,6 +20,9 @@ module.exports = {
       btnLightHover: "var(--btn-light-hover)",
       btnLightActive: "var(--btn-light-active)",
       transparent: "transparent",
+      error: "var(--error)",
+      star: "#FCC00D",
+      disabled: "#C4C4C4",
     },
     extend: {
       backgroundImage: {

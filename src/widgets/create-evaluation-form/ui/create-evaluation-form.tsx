@@ -44,13 +44,15 @@ const CreateEvaluationForm = () => {
       </div>
       <form onSubmit={onSubmit} className="flex flex-col gap-[20px]">
         <Input
-          placeholder={"Введите название оценивания..."}
+          placeholder={"Введите название оценивания*"}
           className="w-full"
           maxLength={70}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             fields.title?.onChange(e.target.value)
           }
+          currentLength={fields.title?.value?.length}
           value={fields.title?.value}
+          error={!!fields.title?.firstError?.rule}
         />
         <ImageUpload
           image={fields.image?.value}
@@ -65,7 +67,7 @@ const CreateEvaluationForm = () => {
           }
           value={fields.description?.value}
         />
-        <CriteriaAdd />
+        <CriteriaAdd error={!!fields.criteria?.firstError?.rule} />
         <ChipsSelect
           onSelectedChange={(selected) => fields.categories?.onChange(selected)}
           onDropDownVisibleChange={(open) =>

@@ -1,9 +1,10 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { EVALUATION_CREATE_ROUTE } from "../../../app/paths";
 import { Button, MaskInput } from "../../../shared/ui";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { fetchEvaluationByCodeFx } from "../../../entities/evaluation/lib/evaluation-effects";
 const MainEvaluationForm = () => {
-
+  const [code, setCode] = useState<string>("");
   const navigate = useNavigate();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,9 +21,13 @@ const MainEvaluationForm = () => {
         Код для оценки
       </h3>
       <div className="flex flex-col gap-[20px]">
-        <MaskInput mask={"* * *  * * *"} />
-        <Button variant={"dark"}>Пройти оценивание</Button>
-        <Button onClick={() => navigate(EVALUATION_CREATE_ROUTE)}>Создать оценивание</Button>
+        <MaskInput mask={"* * *  * * *"} value={code} onChange={setCode} />
+        <Button variant={"dark"} onClick={() => fetchEvaluationByCodeFx(code)}>
+          Пройти оценивание
+        </Button>
+        <Button onClick={() => navigate(EVALUATION_CREATE_ROUTE)}>
+          Создать оценивание
+        </Button>
       </div>
     </form>
   );

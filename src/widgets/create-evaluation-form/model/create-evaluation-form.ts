@@ -2,6 +2,7 @@ import { forward } from "effector";
 import { createForm, Form } from "effector-forms";
 import { createEvaluationFormFx } from "../lib/create-evaluation-form-effects";
 import { Criterion } from "../../../features/criteria-add/model/criteria";
+import { checkRequired } from "../../../shared/lib/validators";
 
 export type CreateEvaluation = {
   title: string;
@@ -16,7 +17,7 @@ export const createEvaluationForm: Form<CreateEvaluation> = createForm({
   fields: {
     title: {
       init: "",
-      rules: [],
+      rules: [checkRequired()],
     },
     description: {
       init: "",
@@ -32,7 +33,7 @@ export const createEvaluationForm: Form<CreateEvaluation> = createForm({
     },
     criteria: {
       init: [{ id: 0, title: "" }],
-      rules: [],
+      rules: [checkRequired()],
     },
     image: {
       init: null,

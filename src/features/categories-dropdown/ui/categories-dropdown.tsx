@@ -27,7 +27,7 @@ const CategoriesDropdown = () => {
   };
 
   const handleAddFilter = (category: Category) => {
-    if (!filters.includes(category.id)) {
+    if (!filters.find((f) => f === category.id)) {
       addFilter(category.id);
     } else {
       deleteFilter(category.id);
@@ -50,13 +50,13 @@ const CategoriesDropdown = () => {
     <div ref={ref} className="relative">
       <FiltersIcon onClick={handleOpen} />
       {isDropdownVisible && (
-        <ul className="absolute top-[50px] right-0 bg-elLightBg px-[10px] py-[20px] rounded-[20px] w-[300px]">
+        <ul className="absolute top-[50px] right-0 bg-bgSecondary px-[10px] py-[20px] rounded-[20px] w-[300px] gap-[5px]">
           {categories.map((item) => (
             <li
               onClick={() => handleAddFilter(item)}
               className={clsx(
-                "cursor-pointer px-[10px] py-[5px] w-full hover:bg-elLightBorder rounded-[10px] select-none",
-                filters.includes(item.id) && "bg-elDarkBg",
+                "cursor-pointer px-[10px] py-[5px] w-full hover:bg-elLightBorder rounded-[10px] select-none bg-elLightBg",
+                filters.find((f) => f === item.id) && "!bg-elDarkBg",
               )}
               key={item.id}
             >

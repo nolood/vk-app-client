@@ -12,7 +12,9 @@ html[data-theme="dark"] {
     --btn-dark-active: #3C4268;
     --btn-light-hover: #7A81AC;
     --btn-light-active: #646DA4;
+    --error: #FCC00D;
 }
+
 
 html[data-theme="light"] {
     --button-bg: #fff;

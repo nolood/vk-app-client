@@ -7,8 +7,9 @@ import {
 } from "../lib/criteria-events";
 import { Input } from "../../../shared/ui";
 import { ChangeEvent } from "react";
+import clsx from "clsx";
 
-const CriteriaAdd = () => {
+const CriteriaAdd = ({ error }: { error: boolean }) => {
   const criteria = useStore($criteria);
 
   const handleAdd = () => {
@@ -25,7 +26,14 @@ const CriteriaAdd = () => {
 
   return (
     <div>
-      <p className="mb-[20px] text-text text-[20px]">Критерии:</p>
+      <p
+        className={clsx(
+          "mb-[20px] text-text text-[20px]",
+          error && "text-error",
+        )}
+      >
+        Критерии:
+      </p>
       <ul className="flex flex-col gap-[10px]">
         {criteria.map((item) => (
           <li
