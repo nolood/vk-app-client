@@ -24,17 +24,11 @@ const EvaluationsList = () => {
     if (
       e.target.documentElement.scrollHeight -
         (e.target.documentElement.scrollTop + window.innerHeight) <
-      10
+      100
     ) {
       setFetching(true);
     }
   };
-
-  // useEffect(() => {
-  //   setCurrentPage(1);
-  //   resetEvaluations();
-  //   setFetching(true);
-  // }, [filters]);
 
   useEffect(() => {
     if (fetching && evaluationsListTotal) {
@@ -50,6 +44,7 @@ const EvaluationsList = () => {
 
     return () => {
       document.removeEventListener("scroll", scrollHandler);
+      resetEvaluations();
     };
   }, []);
 

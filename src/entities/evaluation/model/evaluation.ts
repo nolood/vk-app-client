@@ -7,8 +7,12 @@ import {
   fetchEvaluationFx,
 } from "../lib/evaluation-effects";
 
+export type CustomCriterion = Criterion & {
+  comments: { score: number }[];
+};
+
 export interface EvaluationType extends EvaluationListItem {
-  criteria: Criterion[];
+  criteria: CustomCriterion[];
   owner: UserInfo;
 }
 

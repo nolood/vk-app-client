@@ -10,7 +10,7 @@ const Balance = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
       )}
     >
       <span className="text-text font-bold text-[20px]">1000</span>
-      <StarIcon />
+      <StarIcon className="fill-star" />
     </div>
   );
 };

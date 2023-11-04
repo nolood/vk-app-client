@@ -1,20 +1,18 @@
-import { Criterion } from "../../criteria-add/model/criteria";
-import { PolygonIcon } from "../../../shared/ui/icons";
+import { PolygonIcon, StarIcon } from "../../../shared/ui/icons";
 import { $activeCriterion } from "../../../widgets/criteria-list/model/criteria-list";
 import { useStore } from "effector-react";
 import clsx from "clsx";
 import { setActiveCriterion } from "../../../widgets/criteria-list/lib/criteria-list-events";
 import { StarRating } from "../../../entities/star-rating/ui";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Button, TextArea } from "../../../shared/ui";
 import { sendCriterionScoreEvaluationFx } from "../../../entities/evaluation/lib/evaluation-effects";
-import { checkCriterionAvailabilityFx } from "../../../widgets/criteria-list/lib/criteria-list-effects";
+import { CustomCriterion } from "../../../entities/evaluation/model/evaluation";
 
-const CriterionItem = ({ item }: { item: Criterion }) => {
+const CriterionItem = ({ item }: { item: CustomCriterion }) => {
   const [activeStar, setActiveStar] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [comment, setComment] = useState<string>("");
-  const [available, setAvailable] = useState<boolean>(false);
 
   const activeCriterion = useStore($activeCriterion);
 
@@ -31,20 +29,9 @@ const CriterionItem = ({ item }: { item: Criterion }) => {
         score,
         comment,
       });
-
       setActiveCriterion(null);
     }
   };
-
-  useEffect(() => {
-    const check = async () => {
-      setAvailable(await checkCriterionAvailabilityFx(item.id));
-    };
-
-    check();
-  }, [item]);
-
-  console.log(available);
 
   return (
     <li
@@ -55,7 +42,16 @@ const CriterionItem = ({ item }: { item: Criterion }) => {
     >
       <div className="flex w-full justify-between items-center">
         <p className="text-text text-[20px]">{item.title}</p>
-        <PolygonIcon onClick={handleOpen} className="cursor-pointer" />
+        {!item.comments[0].score ? (
+          <PolygonIcon onClick={handleOpen} className="cursor-pointer" />
+        ) : (
+          <div className="relative">
+            <StarIcon className="fill-star w-[40px] h-[40px]" />
+            <span className="absolute top-1/2 left-1/2 -translate-x-[55%] -translate-y-[50%] text-text text-[20px">
+              {item.comments[0].score}
+            </span>
+          </div>
+        )}
       </div>
       <StarRating
         active={activeStar}

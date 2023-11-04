@@ -13,6 +13,7 @@ const Evaluation = () => {
   useEffect(() => {
     fetchEvaluationFx(String(params.code));
   }, []);
+
   return (
     <ScrollPage className="bg-bg pr-[35px]">
       <div className="flex items-center justify-start w-full">
@@ -30,7 +31,7 @@ const Evaluation = () => {
             alt=""
           />
         )}
-        <p className="w-full bg-elLightBg rounded-[20px] px-[20px] py-[10px] my-[20px] text-text text-[20px]">
+        <p className="w-full bg-elLightBg rounded-[20px] px-[20px] py-[10px] my-[20px] text-text text-[20px] h-max break-words">
           {evaluation?.description}
         </p>
         <CriteriaList list={evaluation?.criteria} />
