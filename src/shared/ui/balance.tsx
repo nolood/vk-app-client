@@ -1,7 +1,10 @@
 import { StarIcon } from "./icons";
 import clsx from "clsx";
+import { useStore } from "effector-react";
+import { $user } from "../../entities/user/model";
 
 const Balance = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
+  const user = useStore($user);
   return (
     <div
       className={clsx(
@@ -9,7 +12,7 @@ const Balance = ({ variant = "dark" }: { variant?: "dark" | "light" }) => {
         variant === "dark" ? "bg-bg" : "bg-elLightBg",
       )}
     >
-      <span className="text-text font-bold text-[20px]">1000</span>
+      <span className="text-text font-bold text-[20px]">{user?.balance}</span>
       <StarIcon className="fill-star" />
     </div>
   );

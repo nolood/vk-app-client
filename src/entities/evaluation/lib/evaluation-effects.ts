@@ -44,7 +44,9 @@ export const sendCriterionScoreEvaluationFx = createEffect<
     score: number;
     comment: string | null;
   },
-  void
+  { criterionId: number; score: number }
 >(async (data) => {
   await api.post("/criteria", data);
+
+  return { criterionId: data.criterionId, score: data.score };
 });

@@ -6,3 +6,4 @@ export { default as Input } from "./input";
 export { default as TextArea } from "./textarea";
 export { default as ChipsSelect } from "./chips-select";
 export { default as ScrollPage } from "./scroll-page";
+export { default as Avatar } from "./avatar";

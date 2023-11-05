@@ -1,4 +1,4 @@
-import { BackButton, ScrollPage } from "../shared/ui";
+import { BackButton, Button, ScrollPage } from "../shared/ui";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useStore } from "effector-react";
@@ -36,6 +36,7 @@ const Evaluation = () => {
         </p>
         <CriteriaList list={evaluation?.criteria} />
       </div>
+      <Button className="mt-auto">Завершить оценивание</Button>
     </ScrollPage>
   );
 };

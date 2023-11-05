@@ -8,6 +8,9 @@ const MainEvaluationForm = () => {
   const navigate = useNavigate();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (code.length === 12 && !code.split(" ").find((item) => item === "_")) {
+      fetchEvaluationByCodeFx(code);
+    }
   };
 
   return (
@@ -22,7 +25,7 @@ const MainEvaluationForm = () => {
       </h3>
       <div className="flex flex-col gap-[20px]">
         <MaskInput mask={"* * *  * * *"} value={code} onChange={setCode} />
-        <Button variant={"dark"} onClick={() => fetchEvaluationByCodeFx(code)}>
+        <Button variant={"dark"} htmlType={"submit"}>
           Пройти оценивание
         </Button>
         <Button onClick={() => navigate(EVALUATION_CREATE_ROUTE)}>

@@ -16,6 +16,8 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
 
   const activeCriterion = useStore($activeCriterion);
 
+  const isEvaluate = item.comments?.length ? item.comments[0].score : false;
+
   const handleOpen = () => {
     if (activeCriterion?.id !== item.id) {
       setActiveCriterion(item);
@@ -37,18 +39,18 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
     <li
       className={clsx(
         "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden",
-        activeCriterion?.id === item.id && "h-[510px]",
+        activeCriterion?.id === item.id && "h-[520px]",
       )}
     >
       <div className="flex w-full justify-between items-center">
         <p className="text-text text-[20px]">{item.title}</p>
-        {!item.comments[0].score ? (
+        {!isEvaluate ? (
           <PolygonIcon onClick={handleOpen} className="cursor-pointer" />
         ) : (
           <div className="relative">
             <StarIcon className="fill-star w-[40px] h-[40px]" />
             <span className="absolute top-1/2 left-1/2 -translate-x-[55%] -translate-y-[50%] text-text text-[20px">
-              {item.comments[0].score}
+              {isEvaluate}
             </span>
           </div>
         )}

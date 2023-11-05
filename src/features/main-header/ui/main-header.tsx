@@ -1,16 +1,18 @@
 import Balance from "../../../shared/ui/balance";
+import { Avatar } from "../../../shared/ui";
+import { useStore } from "effector-react";
+import { $user } from "../../../entities/user/model";
 
 const MainHeader = () => {
+  const user = useStore($user);
   return (
     <div
       className={
-        "w-full flex items-center justify-end absolute z-[2] top-[10px] left-0 gap-[20px]"
+        "w-full flex items-center justify-end absolute z-[2] top-[10px] left-0 gap-[20px] px-[20px]"
       }
     >
       <Balance />
-      <div className="w-[56px] h-[56px] bg-bg rounded-full flex items-center justify-center mr-[10px]">
-        todo
-      </div>
+      <Avatar image={user?.photo_100} />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const ScrollPage = ({
   return (
     <div
       className={clsx(
-        "w-screen h-100% min-h-screen flex flex-col items-center bg-bg px-[20px]",
+        "w-screen h-100% min-h-screen flex flex-col items-center bg-bg px-[20px] pb-[20px]",
         className,
       )}
     >

@@ -24,17 +24,18 @@ const EvaluationListItem = ({ item }: { item: EvaluationListItemType }) => {
           <h4 className="text-text text-[20px]">{item.title}</h4>
           <Button
             onClick={() => navigate(EVALUATION_ROUTE + "/" + item.code.value)}
-            className="text-[14px] px-[10px] py-[5px] w-min"
+            className="text-[14px] px-[10px] py-[3px] w-min"
           >
             Пройти
           </Button>
         </div>
         {item.categories && (
-          <div className="flex gap-[10px] mt-[10px]">
+          <div className="flex gap-[10px] mt-[5px]">
             {item.categories.slice(0, 5).map((category) => (
               <span
+                key={category.id}
                 className={
-                  "text-text bg-elLightBg px-[10px] py-[5px] rounded-[10px rounded-[30px] text-[14px]"
+                  "text-text bg-elLightBg px-[10px] py-[2px] rounded-[10px rounded-[30px] text-[14px]"
                 }
               >
                 {category.value}
