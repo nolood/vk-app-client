@@ -65,6 +65,7 @@ const CreateEvaluationForm = () => {
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
             fields.description?.onChange(e.target.value)
           }
+          currentLength={fields.description?.value?.length}
           value={fields.description?.value}
         />
         <CriteriaAdd error={!!fields.criteria?.firstError?.rule} />

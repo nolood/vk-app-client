@@ -39,7 +39,7 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
     <li
       className={clsx(
         "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden",
-        activeCriterion?.id === item.id && "h-[520px]",
+        activeCriterion?.id === item.id && "h-[510px]",
       )}
     >
       <div className="flex w-full justify-between items-center">
@@ -64,6 +64,7 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
       <TextArea
         variant={"dark"}
         maxLength={300}
+        currentLength={comment.length}
         placeholder="Оставить комментарий..."
         className={"w-full h-[200px]"}
         value={comment}
