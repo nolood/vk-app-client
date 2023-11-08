@@ -5,6 +5,8 @@ import {
   EVALUATION_ROUTE,
   EVALUATIONS_ROUTE,
   MAIN_ROUTE,
+  MY_EVALUATIONS_ROUTE,
+  PROFILE_ROUTE,
 } from "../../app/paths";
 import {
   CreateEvaluationPage,
@@ -12,6 +14,8 @@ import {
   EvaluationPage,
   EvaluationsPage,
   MainPage,
+  MyEvaluationsPage,
+  ProfilePage,
 } from "../../pages";
 
 const router = createBrowserRouter([
@@ -34,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: EVALUATIONS_ROUTE,
     element: <EvaluationsPage />,
+  },
+  {
+    path: PROFILE_ROUTE,
+    element: <ProfilePage />,
+  },
+  {
+    path: MY_EVALUATIONS_ROUTE,
+    element: <MyEvaluationsPage />,
   },
 ]);
 export default router;

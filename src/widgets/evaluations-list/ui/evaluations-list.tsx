@@ -8,8 +8,13 @@ import { useEffect, useState } from "react";
 import { fetchEvaluationsFx } from "../lib/evaluations-list-effects";
 import { $filters } from "../../../entities/filters/model/filters";
 import { resetEvaluations } from "../lib/evaluations-list-events";
+import { EvaluationsListType } from "../../../shared/lib/evaluations-list-types";
 
-const EvaluationsList = () => {
+const EvaluationsList = ({
+  type = "public",
+}: {
+  type?: EvaluationsListType;
+}) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [fetching, setFetching] = useState<boolean>(true);
   const evaluationsList = useStore($evaluationsList);
@@ -17,7 +22,12 @@ const EvaluationsList = () => {
   const filters = useStore($filters);
 
   const fetchEvaluations = () => {
-    fetchEvaluationsFx({ page: currentPage, limit: 20, categories: filters });
+    fetchEvaluationsFx({
+      page: currentPage,
+      limit: 20,
+      categories: filters,
+      type,
+    });
   };
 
   const scrollHandler = (e: any) => {
@@ -32,7 +42,6 @@ const EvaluationsList = () => {
 
   useEffect(() => {
     if (fetching && evaluationsListTotal) {
-      console.log("fetch by scroll");
       fetchEvaluations();
       setCurrentPage((prev) => prev + 1);
       setFetching(false);
@@ -51,7 +60,7 @@ const EvaluationsList = () => {
   return (
     <ul className="w-full flex flex-col items-center gap-[20px]">
       {evaluationsList.map((item) => (
-        <EvaluationListItem key={item.id} item={item} />
+        <EvaluationListItem key={item.id} item={item} type={type} />
       ))}
     </ul>
   );

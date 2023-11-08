@@ -4,3 +4,5 @@ export { default as CreateEvaluationPage } from "./create-evaluations";
 export { default as CreateEvaluationResultPage } from "./evaluation-create-result";
 export { default as EvaluationPage } from "./evaluation";
 export { default as EvaluationsPage } from "./evaluations";
+export { default as ProfilePage } from "./profile";
+export { default as MyEvaluationsPage } from "./my-evaluations";

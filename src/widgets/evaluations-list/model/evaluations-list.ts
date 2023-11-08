@@ -10,6 +10,7 @@ export type EvaluationListItem = {
   private: boolean;
   image: string | null;
   status: "active" | "finished";
+  scoreCount: number;
   ownerId: number;
   code: {
     id: string;

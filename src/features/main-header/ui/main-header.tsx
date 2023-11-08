@@ -2,6 +2,8 @@ import Balance from "../../../shared/ui/balance";
 import { Avatar } from "../../../shared/ui";
 import { useStore } from "effector-react";
 import { $user } from "../../../entities/user/model";
+import router from "../../../shared/router/router";
+import { PROFILE_ROUTE } from "../../../app/paths";
 
 const MainHeader = () => {
   const user = useStore($user);
@@ -12,7 +14,11 @@ const MainHeader = () => {
       }
     >
       <Balance />
-      <Avatar image={user?.photo_100} />
+      <Avatar
+        image={user?.photo_100}
+        className={"cursor-pointer"}
+        onClick={() => router.navigate(PROFILE_ROUTE)}
+      />
     </div>
   );
 };
