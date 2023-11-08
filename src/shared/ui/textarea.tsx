@@ -5,6 +5,8 @@ interface TextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
   maxLength?: number;
   value?: string;
   variant?: "dark" | "light";
+  currentLength?: number;
+  error?: boolean;
 }
 
 const Textarea = ({
@@ -12,10 +14,12 @@ const Textarea = ({
   maxLength,
   value,
   variant = "light",
+  currentLength,
+  error,
   ...rest
 }: TextareaProps) => {
   return (
-    <div>
+    <div className="relative">
       <textarea
         {...rest}
         maxLength={maxLength}
@@ -26,6 +30,14 @@ const Textarea = ({
         )}
         value={value}
       />
+      <span
+        className={clsx(
+          "absolute text-text right-[20px] bottom-[10px]",
+          error && "text-error",
+        )}
+      >
+        {currentLength}/{maxLength}
+      </span>
     </div>
   );
 };

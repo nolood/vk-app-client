@@ -64,6 +64,7 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
       <TextArea
         variant={"dark"}
         maxLength={300}
+        currentLength={comment.length}
         placeholder="Оставить комментарий..."
         className={"w-full h-[200px]"}
         value={comment}
