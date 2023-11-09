@@ -1,5 +1,5 @@
 import { createStore, sample } from "effector";
-import { EvaluationListItem } from "../../../widgets/evaluations-list/model/evaluations-list";
+import { EvaluationListItem } from "../../../features/evaluation-list-item/model/evaluations-list-item-type";
 import { Criterion } from "../../../features/criteria-add/model/criteria";
 import { UserInfo } from "@vkontakte/vk-bridge";
 import {

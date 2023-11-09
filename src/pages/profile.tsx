@@ -2,7 +2,7 @@ import BasePage from "../shared/ui/base-page";
 import { MainMascot } from "../widgets/main-mascot/ui";
 import { Button, Header } from "../shared/ui";
 import router from "../shared/router/router";
-import { MY_EVALUATIONS_ROUTE } from "../app/paths";
+import { MAIN_ROUTE, MY_EVALUATIONS_ROUTE } from "../app/paths";
 
 const Profile = () => {
   return (
@@ -16,7 +16,7 @@ const Profile = () => {
           </Button>
           <Button>Пройденные оценивания</Button>
           <Button>Друзья</Button>
-          <Button>Главное меню</Button>
+          <Button onClick={() => router.navigate(-1)}>Главное меню</Button>
         </div>
       </div>
     </BasePage>
