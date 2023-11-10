@@ -5,3 +5,4 @@ export const EVALUATION_ROUTE = "/evaluation";
 export const EVALUATIONS_ROUTE = "/evaluations";
 export const PROFILE_ROUTE = "/profile";
 export const MY_EVALUATIONS_ROUTE = "/my-evaluations";
+export const CRITERIA_BY_EVALUATION_ROUTE = "/criteria";

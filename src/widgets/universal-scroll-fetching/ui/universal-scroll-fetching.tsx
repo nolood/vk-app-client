@@ -1,8 +1,9 @@
 import { ReactElement, useEffect, useState } from "react";
+import { Pagination } from "../../../shared/types/pagination";
 
 type UniversalScrollFetchingProps<T> = {
   Item: ({ item }: { item: T }) => ReactElement;
-  fetchFn: ({ page, limit }: { page: number; limit: number }) => Promise<T[]>;
+  fetchFn: ({ page, limit }: Pagination) => Promise<T[]>;
   className?: string;
 };
 const UniversalScrollFetching = <T,>({

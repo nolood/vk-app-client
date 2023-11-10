@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
+  CRITERIA_BY_EVALUATION_ROUTE,
   EVALUATION_CREATE_RESULT_ROUTE,
   EVALUATION_CREATE_ROUTE,
   EVALUATION_ROUTE,
@@ -17,6 +18,7 @@ import {
   MyEvaluationsPage,
   ProfilePage,
 } from "../../pages";
+import EvaluationCriteria from "../../pages/evaluation-criteria";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: MY_EVALUATIONS_ROUTE,
     element: <MyEvaluationsPage />,
+  },
+  {
+    path: CRITERIA_BY_EVALUATION_ROUTE + "/:id",
+    element: <EvaluationCriteria />,
   },
 ]);
 export default router;

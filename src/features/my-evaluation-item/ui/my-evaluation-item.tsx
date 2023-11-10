@@ -2,6 +2,8 @@ import React from "react";
 import { StarIcon } from "../../../shared/ui/icons";
 import { Button } from "../../../shared/ui";
 import { EvaluationListItem as EvaluationListItemType } from "../../evaluation-list-item/model/evaluations-list-item-type";
+import router from "../../../shared/router/router";
+import { CRITERIA_BY_EVALUATION_ROUTE } from "../../../app/paths";
 
 const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
   return (
@@ -26,7 +28,14 @@ const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
           Кол-во оценок: {item.scoreCount}
         </p>
         <div className="mt-auto flex w-full gap-[10px]">
-          <Button className={"py-[5px]"}>Результат</Button>
+          <Button
+            className={"py-[5px]"}
+            onClick={() =>
+              router.navigate(CRITERIA_BY_EVALUATION_ROUTE + `/${item.id}`)
+            }
+          >
+            Результат
+          </Button>
           {item.status === "active" && (
             <Button className={"py-[5px]"}>Завершить</Button>
           )}
