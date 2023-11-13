@@ -2,7 +2,7 @@ import { createEffect } from "effector";
 import { apiFormData } from "../../../shared/api/api";
 import { CreateEvaluation } from "../model/create-evaluation-form";
 import router from "../../../shared/router/router";
-import { EVALUATION_CREATE_RESULT_ROUTE } from "../../../app/paths";
+import { EVALUATION_CREATE_RESULT_ROUTE } from "../../../shared/router/paths";
 
 export const createEvaluationFormFx = createEffect<CreateEvaluation, void>(
   async (params) => {

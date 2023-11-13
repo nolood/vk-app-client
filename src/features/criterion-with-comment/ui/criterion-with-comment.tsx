@@ -1,6 +1,8 @@
 import { StarIcon } from "../../../shared/ui/icons";
 import { CriterionWithScore } from "../lib/fetch-criteria-with-comments";
 import { Button } from "../../../shared/ui";
+import router from "../../../shared/router/router";
+import { COMMENTS_FROM_CRITERION_ROUTE } from "../../../shared/router/paths";
 
 const CriterionWithComment = ({ item }: { item: CriterionWithScore }) => {
   return (
@@ -14,7 +16,16 @@ const CriterionWithComment = ({ item }: { item: CriterionWithScore }) => {
           </span>
         </div>
       </div>
-      <Button className="mt-[20px]">Комментарии</Button>
+      <Button
+        className="mt-[20px]"
+        onClick={() =>
+          router.navigate(COMMENTS_FROM_CRITERION_ROUTE + "/" + item.id, {
+            state: { title: item.title },
+          })
+        }
+      >
+        Комментарии
+      </Button>
     </li>
   );
 };

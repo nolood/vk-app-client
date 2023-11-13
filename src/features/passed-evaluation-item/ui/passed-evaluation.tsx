@@ -1,19 +1,14 @@
-import React, { useState } from "react";
 import { StarIcon } from "../../../shared/ui/icons";
 import { Button } from "../../../shared/ui";
-import { EvaluationListItem as EvaluationListItemType } from "../../evaluation-list-item/model/evaluations-list-item-type";
 import router from "../../../shared/router/router";
-import { CRITERIA_BY_EVALUATION_ROUTE } from "../../../shared/router/paths";
-import { finishMyEvaluation } from "../lib/finish-my-evaluation";
+import {
+  CRITERIA_BY_EVALUATION_ROUTE,
+  PASSED_CRITERIA_BY_EVALUATION_ROUTE,
+} from "../../../shared/router/paths";
+import React from "react";
+import { PassedEvaluationType } from "../model/passed-evaluation-type";
 
-const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
-  const [isFinished, setIsFinished] = useState<boolean>(false);
-
-  const handleFinish = () => {
-    finishMyEvaluation(item.id);
-    setIsFinished(true);
-  };
-
+const PassedEvaluation = ({ item }: { item: PassedEvaluationType }) => {
   return (
     <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px]">
       {item.image ? (
@@ -39,20 +34,17 @@ const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
           <Button
             className={"py-[5px]"}
             onClick={() =>
-              router.navigate(CRITERIA_BY_EVALUATION_ROUTE + `/${item.id}`)
+              router.navigate(
+                PASSED_CRITERIA_BY_EVALUATION_ROUTE + `/${item.id}`,
+              )
             }
           >
             Результат
           </Button>
-          {item.status === "active" && !isFinished && (
-            <Button onClick={handleFinish} className={"py-[5px]"}>
-              Завершить
-            </Button>
-          )}
         </div>
       </div>
     </li>
   );
 };
 
-export default MyEvaluationItem;
+export default PassedEvaluation;

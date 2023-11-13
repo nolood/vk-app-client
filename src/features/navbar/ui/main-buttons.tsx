@@ -1,6 +1,6 @@
 import { Button } from "../../../shared/ui";
 import { useNavigate } from "react-router-dom";
-import { EVALUATIONS_ROUTE } from "../../../app/paths";
+import { EVALUATIONS_ROUTE } from "../../../shared/router/paths";
 
 const MainButtons = () => {
   const navigate = useNavigate();

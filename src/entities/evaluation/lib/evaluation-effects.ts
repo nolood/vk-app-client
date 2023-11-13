@@ -2,7 +2,7 @@ import { createEffect } from "effector";
 import { api } from "../../../shared/api";
 import { EvaluationType } from "../model/evaluation";
 import router from "../../../shared/router/router";
-import { EVALUATION_ROUTE, MAIN_ROUTE } from "../../../app/paths";
+import { EVALUATION_ROUTE, MAIN_ROUTE } from "../../../shared/router/paths";
 
 export const createEvaluationFx = createEffect<void, void>(async () => {
   const evaluation = {

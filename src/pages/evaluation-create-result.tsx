@@ -1,7 +1,7 @@
 import BasePage from "../shared/ui/base-page";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../shared/ui";
-import { MAIN_ROUTE } from "../app/paths";
+import { MAIN_ROUTE } from "../shared/router/paths";
 
 const EvaluationCreateResult = () => {
   const params = useParams();

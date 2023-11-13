@@ -22,7 +22,7 @@ const UniversalScrollFetching = <T,>({
   };
 
   const fetchItems = async () => {
-    const data = await fetchFn({ page: currentPage, limit: 20 });
+    const data = await fetchFn({ page: currentPage, limit: 10 });
     setList((prev) => [...prev, ...data]);
     setIsMore(() => !!data.length);
   };

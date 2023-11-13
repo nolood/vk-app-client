@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
-import { EVALUATION_CREATE_ROUTE } from "../../app/paths";
+import { EVALUATION_CREATE_ROUTE } from "../router/paths";
 import { NavLink } from "react-router-dom";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {

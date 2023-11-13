@@ -14,7 +14,7 @@ import { createEvaluationForm } from "../model/create-evaluation-form";
 import { useStore } from "effector-react";
 import { $criteria } from "../../../features/criteria-add/model/criteria";
 import { useNavigate } from "react-router-dom";
-import { EVALUATION_CREATE_RESULT_ROUTE } from "../../../app/paths";
+import { EVALUATION_CREATE_RESULT_ROUTE } from "../../../shared/router/paths";
 
 const CreateEvaluationForm = () => {
   const [categories, setCategories] = useState<Category[]>([]);

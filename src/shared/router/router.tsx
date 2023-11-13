@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
+  COMMENTS_FROM_CRITERION_ROUTE,
   CRITERIA_BY_EVALUATION_ROUTE,
   EVALUATION_CREATE_RESULT_ROUTE,
   EVALUATION_CREATE_ROUTE,
@@ -7,18 +8,23 @@ import {
   EVALUATIONS_ROUTE,
   MAIN_ROUTE,
   MY_EVALUATIONS_ROUTE,
+  PASSED_CRITERIA_BY_EVALUATION_ROUTE,
+  PASSED_EVALUATIONS_ROUTE,
   PROFILE_ROUTE,
-} from "../../app/paths";
+} from "./paths";
 import {
+  CommentsFromCriterion,
   CreateEvaluationPage,
   CreateEvaluationResultPage,
+  EvaluationCriteria,
   EvaluationPage,
   EvaluationsPage,
   MainPage,
   MyEvaluationsPage,
+  PassedCriteriaByEvaluation,
+  PassedEvaluations,
   ProfilePage,
 } from "../../pages";
-import EvaluationCriteria from "../../pages/evaluation-criteria";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +58,18 @@ const router = createBrowserRouter([
   {
     path: CRITERIA_BY_EVALUATION_ROUTE + "/:id",
     element: <EvaluationCriteria />,
+  },
+  {
+    path: COMMENTS_FROM_CRITERION_ROUTE + "/:id",
+    element: <CommentsFromCriterion />,
+  },
+  {
+    path: PASSED_EVALUATIONS_ROUTE,
+    element: <PassedEvaluations />,
+  },
+  {
+    path: PASSED_CRITERIA_BY_EVALUATION_ROUTE + "/:id",
+    element: <PassedCriteriaByEvaluation />,
   },
 ]);
 export default router;

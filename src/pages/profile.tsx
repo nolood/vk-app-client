@@ -2,7 +2,11 @@ import BasePage from "../shared/ui/base-page";
 import { MainMascot } from "../widgets/main-mascot/ui";
 import { Button, Header } from "../shared/ui";
 import router from "../shared/router/router";
-import { MAIN_ROUTE, MY_EVALUATIONS_ROUTE } from "../app/paths";
+import {
+  MAIN_ROUTE,
+  MY_EVALUATIONS_ROUTE,
+  PASSED_EVALUATIONS_ROUTE,
+} from "../shared/router/paths";
 
 const Profile = () => {
   return (
@@ -14,9 +18,13 @@ const Profile = () => {
           <Button onClick={() => router.navigate(MY_EVALUATIONS_ROUTE)}>
             Мои оценивания
           </Button>
-          <Button>Пройденные оценивания</Button>
+          <Button onClick={() => router.navigate(PASSED_EVALUATIONS_ROUTE)}>
+            Пройденные оценивания
+          </Button>
           <Button>Друзья</Button>
-          <Button onClick={() => router.navigate(-1)}>Главное меню</Button>
+          <Button onClick={() => router.navigate(MAIN_ROUTE)}>
+            Главное меню
+          </Button>
         </div>
       </div>
     </BasePage>

@@ -3,7 +3,7 @@ import { Avatar } from "../../../shared/ui";
 import { useStore } from "effector-react";
 import { $user } from "../../../entities/user/model";
 import router from "../../../shared/router/router";
-import { PROFILE_ROUTE } from "../../../app/paths";
+import { PROFILE_ROUTE } from "../../../shared/router/paths";
 
 const MainHeader = () => {
   const user = useStore($user);

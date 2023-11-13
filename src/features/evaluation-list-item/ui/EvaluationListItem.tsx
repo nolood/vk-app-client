@@ -1,7 +1,7 @@
 import { EvaluationListItem as EvaluationListItemType } from "../model/evaluations-list-item-type";
 import { Button } from "../../../shared/ui";
 import { useNavigate } from "react-router-dom";
-import { EVALUATION_ROUTE } from "../../../app/paths";
+import { EVALUATION_ROUTE } from "../../../shared/router/paths";
 import { StarIcon } from "../../../shared/ui/icons";
 import { EvaluationsListType } from "../../../shared/lib/evaluations-list-types";
 

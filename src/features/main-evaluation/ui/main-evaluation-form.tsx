@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { EVALUATION_CREATE_ROUTE } from "../../../app/paths";
+import { EVALUATION_CREATE_ROUTE } from "../../../shared/router/paths";
 import { Button, MaskInput } from "../../../shared/ui";
 import { useNavigate } from "react-router-dom";
 import { fetchEvaluationByCodeFx } from "../../../entities/evaluation/lib/evaluation-effects";

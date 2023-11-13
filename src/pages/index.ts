@@ -6,3 +6,7 @@ export { default as EvaluationPage } from "./evaluation";
 export { default as EvaluationsPage } from "./evaluations";
 export { default as ProfilePage } from "./profile";
 export { default as MyEvaluationsPage } from "./my-evaluations";
+export { default as CommentsFromCriterion } from "./comments-from-criterion";
+export { default as EvaluationCriteria } from "./evaluation-criteria";
+export { default as PassedEvaluations } from "./passed-evaluations";
+export { default as PassedCriteriaByEvaluation } from "./passed-criteria-by-evaluation";
