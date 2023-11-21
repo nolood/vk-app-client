@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import {
   COMMENTS_FROM_CRITERION_ROUTE,
+  CONSTELLATIONS_ROUTE,
   CRITERIA_BY_EVALUATION_ROUTE,
   EVALUATION_CREATE_RESULT_ROUTE,
   EVALUATION_CREATE_ROUTE,
@@ -14,6 +15,7 @@ import {
 } from "./paths";
 import {
   CommentsFromCriterion,
+  Constellations,
   CreateEvaluationPage,
   CreateEvaluationResultPage,
   EvaluationCriteria,
@@ -70,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: PASSED_CRITERIA_BY_EVALUATION_ROUTE + "/:id",
     element: <PassedCriteriaByEvaluation />,
+  },
+  {
+    path: CONSTELLATIONS_ROUTE,
+    element: <Constellations />,
   },
 ]);
 export default router;

@@ -1,6 +1,8 @@
 import Stars from "../../../shared/ui/stars";
+import Mascot from "../../../features/mascot/ui/mascot";
+import clsx from "clsx";
 
-const MainMascot = () => {
+const MainMascot = ({ className }: { className?: string }) => {
   return (
     <div className="bg-sky h-screen w-full absolute z-[0]">
       <Stars
@@ -11,6 +13,7 @@ const MainMascot = () => {
         variant={false}
         className={"absolute right-[-150px] top-[-50px] w-[600px]"}
       />
+      <Mascot className={clsx("absolute top-[30px]", className)} />
     </div>
   );
 };

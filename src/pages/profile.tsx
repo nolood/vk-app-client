@@ -12,7 +12,7 @@ const Profile = () => {
   return (
     <BasePage>
       <Header />
-      <MainMascot />
+      <MainMascot className={"top-[210px]"} />
       <div className="w-full flex items-center justify-center bg-bg py-[30px] rounded-t-[30px] mt-auto z-[1]">
         <div className="w-10/12 flex flex-col gap-[20px]">
           <Button onClick={() => router.navigate(MY_EVALUATIONS_ROUTE)}>

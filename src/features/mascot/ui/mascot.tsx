@@ -1,4 +1,6 @@
-const Mascot = () => {
+import clsx from "clsx";
+
+const Mascot = ({ className }: { className?: string }) => {
   return (
     <svg
       version="1.1"
@@ -9,6 +11,7 @@ const Mascot = () => {
       y="0px"
       viewBox="0 0 340.16 340.16"
       xmlSpace="preserve"
+      className={clsx("w-[300px]", className)}
     >
       <path
         style={{

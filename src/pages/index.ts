@@ -10,3 +10,4 @@ export { default as CommentsFromCriterion } from "./comments-from-criterion";
 export { default as EvaluationCriteria } from "./evaluation-criteria";
 export { default as PassedEvaluations } from "./passed-evaluations";
 export { default as PassedCriteriaByEvaluation } from "./passed-criteria-by-evaluation";
+export { default as Constellations } from "./constellations";
