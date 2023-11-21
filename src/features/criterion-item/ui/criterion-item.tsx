@@ -45,7 +45,7 @@ const CriterionItem = ({
 
   const rootClassName = clsx(
     "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden",
-    active && "h-[520px]",
+    active && "h-[510px]",
   );
 
   // useEffect(() => {

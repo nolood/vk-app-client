@@ -13,7 +13,9 @@ const CommentItem = ({ item }: { item: CommentType }) => {
         <p className="text-[14px] text-bg font-semibold">
           {item.user.first_name + " " + item.user.last_name}
         </p>
-        <p className="text-text">{item.title}</p>
+        <p className="text-text">
+          {item.title || "Молча оценил данный критерий"}
+        </p>
       </div>
       <div className="relative place-self-center">
         <StarIcon className="fill-star w-[60px] h-[60px]" />
