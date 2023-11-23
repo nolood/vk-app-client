@@ -12,4 +12,4 @@ export const PASSED_CRITERIA_BY_EVALUATION_ROUTE =
   "/passed-criteria-by-evaluation";
 export const CONSTELLATIONS_ROUTE = "/constellations";
 export const MY_CONSTELLATIONS_ROUTE = "/my-constellations";
-export const MASCOT_STORE_ROUTE = "/mascot-store";
+export const MASCOT_STORE_ROUTE = "/mascot-store-list";

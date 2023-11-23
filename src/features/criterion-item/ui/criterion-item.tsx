@@ -4,18 +4,12 @@ import { useStore } from "effector-react";
 import clsx from "clsx";
 import { setActiveCriterion } from "../../../widgets/criteria-list/lib/criteria-list-events";
 import { StarRating } from "../../../entities/star-rating/ui";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { Button, TextArea } from "../../../shared/ui";
 import { sendCriterionScoreEvaluationFx } from "../../../entities/evaluation/lib/evaluation-effects";
 import { CustomCriterion } from "../../../entities/evaluation/model/evaluation";
 
-const CriterionItem = ({
-  item,
-  active,
-}: {
-  item: CustomCriterion;
-  active: boolean;
-}) => {
+const CriterionItem = ({ item }: { item: CustomCriterion }) => {
   const [activeStar, setActiveStar] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [comment, setComment] = useState<string>("");
@@ -26,10 +20,7 @@ const CriterionItem = ({
   const isEvaluate = item.comments?.length ? item.comments[0].score : false;
 
   const handleOpen = () => {
-    if (activeCriterion?.id !== item.id) {
-      setActiveCriterion(item);
-      // setIsCollapsed(true);
-    }
+    setActiveCriterion(item);
   };
 
   const handleEvaluate = () => {
@@ -43,21 +34,15 @@ const CriterionItem = ({
     }
   };
 
-  const rootClassName = clsx(
-    "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden",
-    active && "h-[510px]",
-  );
-
-  // useEffect(() => {
-  //   if (activeCriterion?.id === item.id) {
-  //     setIsCollapsed(true);
-  //   } else {
-  //     setIsCollapsed(false);
-  //   }
-  // }, [activeCriterion]);
-
   return (
-    <li className={rootClassName}>
+    <li
+      className={clsx(
+        "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden",
+      )}
+      style={{
+        height: activeCriterion?.id === item.id ? "520px" : "74px",
+      }}
+    >
       <div className="flex w-full justify-between items-center">
         <p className="text-text text-[20px]">{item.title}</p>
         {!isEvaluate ? (

@@ -30,20 +30,6 @@ const App = () => {
         <AppRoot>
           <SplitLayout popout={popout}>
             <SplitCol>
-              {/*<View activePanel={activePanel}>*/}
-              {/*{routes.map(({ path, Component }) => (*/}
-              {/*  <Panel className={"h-screen w-screen"} id={path}>*/}
-              {/*    <Component key={path} />*/}
-              {/*  </Panel>*/}
-              {/*))}*/}
-              {/*</View>*/}
-              {/*<BrowserRouter>*/}
-              {/*  <Routes>*/}
-              {/*    {routes.map(({ path, Component }) => (*/}
-              {/*      <Route key={path} path={path} element={<Component />} />*/}
-              {/*    ))}*/}
-              {/*  </Routes>*/}
-              {/*</BrowserRouter>*/}
               <RouterProvider router={router} />
             </SplitCol>
           </SplitLayout>
