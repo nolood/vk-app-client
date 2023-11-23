@@ -8,6 +8,8 @@ import {
   EVALUATION_ROUTE,
   EVALUATIONS_ROUTE,
   MAIN_ROUTE,
+  MASCOT_STORE_ROUTE,
+  MY_CONSTELLATIONS_ROUTE,
   MY_EVALUATIONS_ROUTE,
   PASSED_CRITERIA_BY_EVALUATION_ROUTE,
   PASSED_EVALUATIONS_ROUTE,
@@ -26,6 +28,8 @@ import {
   PassedCriteriaByEvaluation,
   PassedEvaluations,
   ProfilePage,
+  MyConstellations,
+  MascotStore,
 } from "../../pages";
 
 const router = createBrowserRouter([
@@ -76,6 +80,14 @@ const router = createBrowserRouter([
   {
     path: CONSTELLATIONS_ROUTE,
     element: <Constellations />,
+  },
+  {
+    path: MY_CONSTELLATIONS_ROUTE,
+    element: <MyConstellations />,
+  },
+  {
+    path: MASCOT_STORE_ROUTE,
+    element: <MascotStore />,
   },
 ]);
 export default router;
