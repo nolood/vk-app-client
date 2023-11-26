@@ -16,7 +16,7 @@ const MainEvaluationForm = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col justify-center bg-bgSecondary self-center px-[50px] w-full rounded-[24px] py-[20px]"
+      className="flex flex-col justify-center bg-bgSecondary self-center px-[50px] w-full rounded-[24px] py-[20px] max-400:px-[20px]"
     >
       <h3
         className={"text-center text-[22px] mb-[24px] text-theme font-semibold"}
@@ -24,7 +24,12 @@ const MainEvaluationForm = () => {
         Код для оценки
       </h3>
       <div className="flex flex-col gap-[20px]">
-        <MaskInput mask={"* * *  * * *"} value={code} onChange={setCode} />
+        <MaskInput
+          mask={"* * *  * * *"}
+          value={code}
+          onChange={setCode}
+          className={"max-445:text-[18px]"}
+        />
         <Button variant={"dark"} htmlType={"submit"}>
           Пройти оценивание
         </Button>

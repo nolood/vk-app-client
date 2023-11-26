@@ -11,7 +11,7 @@ const MainButtons = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col w-full gap-[12px] mt-[16px]">
-      <div className={"flex gap-[30px]"}>
+      <div className={"flex gap-[30px] max-445:gap-[10px]"}>
         <Button
           className={"w-full"}
           // onClick={() => router.navigate(MASCOT_STORE_ROUTE)}

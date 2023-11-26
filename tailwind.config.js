@@ -2,6 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{tsx,ts}"],
   theme: {
+    screens: {
+      "max-510": { max: "510px" },
+      "max-445": { max: "445px" },
+      "max-400": { max: "400px" },
+      "max-height-850": { raw: "(max-height: 800px)" },
+      "max-height-890": { raw: "(max-height: 890px)" },
+    },
     fontSize: {
       default: "20px",
     },

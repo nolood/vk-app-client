@@ -30,7 +30,7 @@ const Button = ({
         variant === "light"
           ? "bg-elLightBg border border-solid border-elLightBorder hover:bg-btnLightHover active:bg-btnLightActive transition"
           : "bg-elDarkBg hover:bg-btnDarkHover active:bg-btnDarkActive transition",
-        "flex items-center justify-center rounded-[36px] text-center text-text py-[16px] px-[20px] text-default w-full cursor-pointer",
+        "flex items-center justify-center rounded-[36px] text-center text-text py-[16px] px-[20px] text-default w-full cursor-pointer max-445:py-[5px] max-445:px-[16px] max-445:text-[16px] max-510:px-[5px]",
         disabled &&
           "cursor-not-allowed bg-disabled hover:bg-disabled active:bg-disabled",
         closed &&

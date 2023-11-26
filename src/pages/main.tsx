@@ -10,7 +10,11 @@ const Main = () => {
   return (
     <BasePage>
       <Header />
-      <MainMascot className={"top-[30px]"} />
+      <MainMascot
+        className={
+          "top-[30px] max-height-850:top-[-10px] max-height-890:top-[100px]"
+        }
+      />
       <MainControls />
     </BasePage>
   );
