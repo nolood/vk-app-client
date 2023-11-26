@@ -34,7 +34,7 @@ const Button = ({
         disabled &&
           "cursor-not-allowed bg-disabled hover:bg-disabled active:bg-disabled",
         closed &&
-          "cursor-not-allowed bg-disabled hover:bg-disabled active:bg-disabled relative",
+          "cursor-not-allowed !bg-disabled hover:bg-disabled active:bg-disabled relative",
         className,
       )}
     >

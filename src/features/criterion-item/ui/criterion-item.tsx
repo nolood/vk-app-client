@@ -6,8 +6,8 @@ import { setActiveCriterion } from "../../../widgets/criteria-list/lib/criteria-
 import { StarRating } from "../../../entities/star-rating/ui";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { Button, TextArea } from "../../../shared/ui";
-import { sendCriterionScoreEvaluationFx } from "../../../entities/evaluation/model/evaluation-effects";
 import { CustomCriterion } from "../../../entities/evaluation/model/evaluation";
+import { sendCriterionScoreEvaluationFx } from "../../../entities/evaluation/model/evaluation-effects";
 
 const CriterionItem = ({ item }: { item: CustomCriterion }) => {
   const [activeStar, setActiveStar] = useState<number>(0);

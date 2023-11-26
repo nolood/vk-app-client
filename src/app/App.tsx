@@ -13,6 +13,7 @@ import { fetchUserFx } from "../entities/user/model";
 import "./styles/globals.css";
 import { RouterProvider } from "react-router-dom";
 import router from "../shared/router/router";
+import Notifications from "../shared/ui/notifications";
 
 const App = () => {
   const [popout, setPopout] = useState<ReactNode | null>(
@@ -30,6 +31,7 @@ const App = () => {
         <AppRoot>
           <SplitLayout popout={popout}>
             <SplitCol>
+              <Notifications />
               <RouterProvider router={router} />
             </SplitCol>
           </SplitLayout>

@@ -1,8 +1,9 @@
 import { createEffect } from "effector";
 import { api } from "../../../shared/api";
-import { EvaluationType } from "../model/evaluation";
+import { EvaluationType } from "./evaluation";
 import router from "../../../shared/router/router";
 import { EVALUATION_ROUTE, MAIN_ROUTE } from "../../../shared/router/paths";
+import { IUser } from "../../user/model/user";
 
 export const createEvaluationFx = createEffect<void, void>(async () => {
   const evaluation = {
@@ -19,21 +20,29 @@ export const createEvaluationFx = createEffect<void, void>(async () => {
   console.log(res);
 });
 
-export const fetchEvaluationByCodeFx = createEffect<string, EvaluationType>(
-  async (code) => {
-    const newCode = code.split("  ").join("").split(" ").join("");
-    const res = await api.get<EvaluationType>(`/evaluations/${newCode}`);
-    router.navigate(EVALUATION_ROUTE + "/" + newCode);
-    return res.data;
-  },
-);
+// export const fetchEvaluationByCodeFx = createEffect<string, EvaluationType>(
+//   async (code) => {
+//     const newCode = code.split("  ").join("").split(" ").join("");
+//     const res = await api.get<EvaluationType>(`/evaluations/${newCode}`);
+//     router.navigate(EVALUATION_ROUTE + "/" + newCode);
+//     return res.data;
+//   },
+// );
 
-export const fetchEvaluationFx = createEffect<string, EvaluationType>(
-  async (code) => {
-    const res = await api.get(`/evaluations/${code}`);
-    if (!res.data) {
-      router.navigate(MAIN_ROUTE);
-    }
+// export const fetchEvaluationFx = createEffect<string, EvaluationType>(
+//   async (code) => {
+//     const res = await api.get(`/evaluations/${code}`);
+//     if (!res.data) {
+//       router.navigate(MAIN_ROUTE);
+//     }
+//     return res.data;
+//   },
+// );
+
+export const evaluateEvaluationFx = createEffect<string, IUser>(
+  async (param) => {
+    const res = await api.put<IUser>(`/evaluations/finish-evaluate/${param}`);
+
     return res.data;
   },
 );

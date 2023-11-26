@@ -1,13 +1,12 @@
 import { NotificationType } from "../model/notifications";
+import { deleteNotification } from "./notifications-events";
 
 export const notificationsHandler = (notifications: NotificationType[]) => {
-  const newList = [...notifications];
+  const item = notifications.at(-1);
 
-  if (notifications.length >= 5) {
-    newList.shift();
+  if (item) {
+    setTimeout(() => {
+      deleteNotification(item?.id ?? 0);
+    }, 3000);
   }
-
-  setTimeout(() => {
-    const data = newList.filter((item) => item.id !== notifications.at(-1)?.id);
-  }, 3000);
 };

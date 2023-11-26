@@ -2,25 +2,38 @@ import { BackButton, Button, ScrollPage } from "../shared/ui";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useStore } from "effector-react";
-import { $currentEvaluation } from "../entities/evaluation/model/evaluation";
 import {
-  evaluateEvaluationFx,
+  $currentEvaluation,
   fetchEvaluationFx,
-} from "../entities/evaluation/model/evaluation-effects";
+} from "../entities/evaluation/model/evaluation";
+
 import { CriteriaList } from "../widgets/criteria-list/ui";
 import { clearEvaluation } from "../entities/evaluation/lib/evaluation-events";
 import router from "../shared/router/router";
+import { evaluateEvaluationFx } from "../entities/evaluation/model/evaluation-effects";
+import { showNotification } from "../shared/lib/notifications-events";
 
 const Evaluation = () => {
   const params = useParams();
   const evaluation = useStore($currentEvaluation);
 
   const handleEvaluate = async () => {
-    if (evaluation?.id) {
-      const data = await evaluateEvaluationFx(evaluation.id);
-      if (data) {
-        router.navigate(-1);
+    try {
+      if (evaluation?.id) {
+        const data = await evaluateEvaluationFx(evaluation.id);
+        if (data) {
+          router.navigate(-1);
+          showNotification({
+            type: "success",
+            text: "Оценивание завершено. Ваш баланс пополнен.",
+          });
+        }
       }
+    } catch (e) {
+      showNotification({
+        type: "success",
+        text: "Оцените все критерии для того чтобы завершить оценивание",
+      });
     }
   };
 
