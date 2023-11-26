@@ -1,5 +1,5 @@
 import { api } from "../shared/api";
-import { createEvaluationFx } from "../entities/evaluation/lib/evaluation-effects";
+import { createEvaluationFx } from "../entities/evaluation/model/evaluation-effects";
 import { MainMascot } from "../widgets/main-mascot/ui";
 import useTheme from "../shared/hooks/use-theme";
 import { MainControls } from "../widgets/main-controls/ui";
@@ -20,7 +20,7 @@ const Main = () => {
   return (
     <BasePage>
       <Header />
-      <MainMascot />
+      <MainMascot className={"top-[30px]"} />
       <MainControls />
     </BasePage>
   );

@@ -3,15 +3,33 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useStore } from "effector-react";
 import { $currentEvaluation } from "../entities/evaluation/model/evaluation";
-import { fetchEvaluationFx } from "../entities/evaluation/lib/evaluation-effects";
+import {
+  evaluateEvaluationFx,
+  fetchEvaluationFx,
+} from "../entities/evaluation/model/evaluation-effects";
 import { CriteriaList } from "../widgets/criteria-list/ui";
+import { clearEvaluation } from "../entities/evaluation/lib/evaluation-events";
+import router from "../shared/router/router";
 
 const Evaluation = () => {
   const params = useParams();
   const evaluation = useStore($currentEvaluation);
 
+  const handleEvaluate = async () => {
+    if (evaluation?.id) {
+      const data = await evaluateEvaluationFx(evaluation.id);
+      if (data) {
+        router.navigate(-1);
+      }
+    }
+  };
+
   useEffect(() => {
     fetchEvaluationFx(String(params.code));
+
+    return () => {
+      clearEvaluation();
+    };
   }, []);
 
   return (
@@ -36,7 +54,9 @@ const Evaluation = () => {
         </p>
         <CriteriaList list={evaluation?.criteria} />
       </div>
-      <Button className="mt-auto">Завершить оценивание</Button>
+      <Button onClick={handleEvaluate} className="mt-auto">
+        Завершить оценивание
+      </Button>
     </ScrollPage>
   );
 };

@@ -14,7 +14,8 @@ const MainButtons = () => {
       <div className={"flex gap-[30px]"}>
         <Button
           className={"w-full"}
-          onClick={() => router.navigate(MASCOT_STORE_ROUTE)}
+          // onClick={() => router.navigate(MASCOT_STORE_ROUTE)}
+          closed
         >
           Маскот
         </Button>

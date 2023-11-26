@@ -13,7 +13,7 @@ const MainMascot = ({ className }: { className?: string }) => {
         variant={false}
         className={"absolute right-[-150px] top-[-50px] w-[600px]"}
       />
-      <Mascot className={clsx("absolute top-[30px]", className)} />
+      <Mascot className={"absolute " + className} />
     </div>
   );
 };

@@ -1,9 +1,13 @@
-import { ScrollPage } from "../shared/ui";
+import { BackButton, ScrollPage } from "../shared/ui";
+import ConstellationsList from "../widgets/constellations-list/ui/constellations-list";
 
 const MyConstellations = () => {
   return (
     <ScrollPage>
-      <>My constellations</>
+      <div className={"flex w-full justify-start"}>
+        <BackButton />
+      </div>
+      <ConstellationsList />
     </ScrollPage>
   );
 };

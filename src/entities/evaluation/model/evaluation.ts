@@ -1,4 +1,4 @@
-import { createStore, sample } from "effector";
+import { createStore } from "effector";
 import { EvaluationListItem } from "../../../features/evaluation-list-item/model/evaluations-list-item-type";
 import { Criterion } from "../../../features/criteria-add/model/criteria";
 import { UserInfo } from "@vkontakte/vk-bridge";
@@ -6,7 +6,8 @@ import {
   fetchEvaluationByCodeFx,
   fetchEvaluationFx,
   sendCriterionScoreEvaluationFx,
-} from "../lib/evaluation-effects";
+} from "./evaluation-effects";
+import { clearEvaluation } from "../lib/evaluation-events";
 
 export type CustomCriterion = Criterion & {
   comments?: { score: number }[];
@@ -33,4 +34,5 @@ export const $currentEvaluation = createStore<EvaluationType | null>(null)
       };
     }
     return null;
-  });
+  })
+  .on(clearEvaluation, () => null);

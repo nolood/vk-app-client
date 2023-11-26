@@ -8,6 +8,6 @@ export const notificationsHandler = (notifications: NotificationType[]) => {
   }
 
   setTimeout(() => {
-    return newList.filter((item) => item.id !== notifications.at(-1)?.id);
+    const data = newList.filter((item) => item.id !== notifications.at(-1)?.id);
   }, 3000);
 };

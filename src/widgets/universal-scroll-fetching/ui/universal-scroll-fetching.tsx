@@ -1,5 +1,8 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Pagination } from "../../../shared/types/pagination";
+import { Button } from "../../../shared/ui";
+import router from "../../../shared/router/router";
+import { MAIN_ROUTE } from "../../../shared/router/paths";
 
 type UniversalScrollFetchingProps<T> = {
   Item: ({ item }: { item: T }) => ReactElement;
@@ -53,6 +56,16 @@ const UniversalScrollFetching = <T,>({
       reset();
     };
   }, []);
+
+  if (!list.length)
+    return (
+      <div className="w-full flex flex-col items-center gap-[20px]">
+        <p className="text-text text-[20px]">Пока здесь ничего нет</p>
+        <Button onClick={() => router.navigate(MAIN_ROUTE)}>
+          Вернуться на главную
+        </Button>
+      </div>
+    );
 
   return (
     <ul className={className}>
