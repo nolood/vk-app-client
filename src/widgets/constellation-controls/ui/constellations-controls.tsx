@@ -38,7 +38,7 @@ const ConstellationsControls = () => {
       {newConstellation && (
         <ConstellationItem
           item={newConstellation}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100]"
         />
       )}
       <div className="relative w-full flex flex-col gap-[20px] pt-[60px] items-center justify-center bg-bg py-[30px] rounded-t-[30px] mt-auto z-[1] px-[20px]">

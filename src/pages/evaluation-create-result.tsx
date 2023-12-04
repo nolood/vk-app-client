@@ -30,7 +30,9 @@ const EvaluationCreateResult = () => {
       <h1 className="text-text text-[36px] font-bold text-center uppercase">
         {code}
       </h1>
-      <Button className="mt-[64px] mb-[36px]">Поделиться оцениванием</Button>
+      <Button closed className="mt-[64px] mb-[36px]">
+        Поделиться оцениванием
+      </Button>
       <Button onClick={() => navigate(MAIN_ROUTE)}>Вернуться на главную</Button>
     </BasePage>
   );
