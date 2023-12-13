@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: `http://localhost:3001`,
+  baseURL: `http://95.163.181.145:3001`,
   headers: { "Content-Type": "application/json" },
 });
 
 export const apiFormData = axios.create({
-  baseURL: `http://localhost:3001`,
+  baseURL: `http://95.163.181.145:3001`,
   headers: { "Content-Type": "multipart/form-data" },
 });
 

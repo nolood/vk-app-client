@@ -58,7 +58,7 @@ const Evaluation = () => {
         {evaluation?.image && (
           <img
             className="h-[300px] w-full object-cover mt-[10px] rounded-[20px]"
-            src={"http://localhost:3001/" + evaluation.image}
+            src={"http://95.163.181.145:3001/" + evaluation.image}
             alt=""
           />
         )}
