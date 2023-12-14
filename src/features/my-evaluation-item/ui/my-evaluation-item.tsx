@@ -19,7 +19,7 @@ const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
       {item.image ? (
         <img
           className={"object-cover min-w-[33%] h-full rounded-l-[20px]"}
-          src={"http://95.163.181.145:3001/" + item.image}
+          src={"https://midisvkminiapp.online/" + item.image}
           alt={"Оценивание без картинки"}
         />
       ) : (
