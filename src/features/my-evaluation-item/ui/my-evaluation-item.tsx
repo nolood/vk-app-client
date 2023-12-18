@@ -15,7 +15,7 @@ const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
   };
 
   return (
-    <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px]">
+    <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px] max-445:flex-col max-445:h-auto">
       {item.image ? (
         <img
           className={"object-cover min-w-[33%] h-full rounded-l-[20px]"}
@@ -35,7 +35,7 @@ const MyEvaluationItem = ({ item }: { item: EvaluationListItemType }) => {
         <p className="flex-1 text-text text-[16px]">
           Кол-во оценок: {item.scoreCount}
         </p>
-        <div className="mt-auto flex w-full gap-[10px]">
+        <div className="mt-auto flex w-full gap-[10px] max-445:mt-[30px]">
           <Button
             className={"py-[5px]"}
             onClick={() =>

@@ -27,12 +27,12 @@ const StarRating = ({
         >
           <StarIcon
             className={clsx(
-              "w-[80px] h-[80px] fill-disabled",
+              "w-[80px] h-[80px] fill-disabled max-510:w-[40px] max-510:h-[40px]",
               active >= item && !score && "fill-star",
-              score >= item && "fill-star",
+              score >= item && "fill-star"
             )}
           />
-          <span className="absolute top-1/2 left-1/2 -translate-x-[70%] -translate-y-[55%] text-text text-[26px]">
+          <span className="absolute top-1/2 left-1/2 -translate-x-[70%] -translate-y-[55%] text-text text-[26px] max-510:text-[16px]">
             {item}
           </span>
         </div>

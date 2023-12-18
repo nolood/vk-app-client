@@ -10,15 +10,17 @@ import { PassedEvaluationType } from "../model/passed-evaluation-type";
 
 const PassedEvaluation = ({ item }: { item: PassedEvaluationType }) => {
   return (
-    <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px]">
+    <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px] max-445:flex-col max-445:h-auto">
       {item.image ? (
         <img
-          className={"object-cover min-w-[33%] h-full rounded-l-[20px]"}
+          className={
+            "object-cover min-w-[33%] max-w-[33%] h-full rounded-l-[20px] max-445:max-w-full max-445:h-[150px]"
+          }
           src={"https://midisvkminiapp.online/" + item.image}
           alt={"Оценивание без картинки"}
         />
       ) : (
-        <div className="min-w-[33%] h-full rounded-[20px] bg-elLightBg flex items-center justify-center">
+        <div className="min-w-[33%] max-w-[33%] h-full rounded-[20px] bg-elLightBg flex items-center justify-center max-445:max-w-full max-445:h-[150px]">
           <StarIcon className={"fill-star w-[90px] h-[90px]"} />
         </div>
       )}
@@ -30,12 +32,12 @@ const PassedEvaluation = ({ item }: { item: PassedEvaluationType }) => {
         <p className="flex-1 text-text text-[16px]">
           Кол-во оценок: {item.scoreCount}
         </p>
-        <div className="mt-auto flex w-full gap-[10px]">
+        <div className="mt-auto flex w-full gap-[10px] max-445:mt-[35px]">
           <Button
             className={"py-[5px]"}
             onClick={() =>
               router.navigate(
-                PASSED_CRITERIA_BY_EVALUATION_ROUTE + `/${item.id}`,
+                PASSED_CRITERIA_BY_EVALUATION_ROUTE + `/${item.id}`
               )
             }
           >

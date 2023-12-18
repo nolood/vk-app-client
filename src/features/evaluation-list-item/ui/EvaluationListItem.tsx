@@ -3,20 +3,21 @@ import { Button } from "../../../shared/ui";
 import { useNavigate } from "react-router-dom";
 import { EVALUATION_ROUTE } from "../../../shared/router/paths";
 import { StarIcon } from "../../../shared/ui/icons";
-import { EvaluationsListType } from "../../../shared/lib/evaluations-list-types";
 
 const EvaluationListItem = ({ item }: { item: EvaluationListItemType }) => {
   const navigate = useNavigate();
   return (
-    <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px]">
+    <li className="w-full h-[150px] flex bg-elDarkBg rounded-[20px] max-445:flex-col max-445:h-auto">
       {item.image ? (
         <img
-          className={"object-cover min-w-[33%] h-full rounded-l-[20px]"}
+          className={
+            "object-cover min-w-[33%] h-full rounded-l-[20px] max-445:max-h-[150px]"
+          }
           src={"https://midisvkminiapp.online/" + item.image}
           alt={"Оценивание без картинки"}
         />
       ) : (
-        <div className="min-w-[33%] h-full rounded-[20px] bg-elLightBg flex items-center justify-center">
+        <div className="min-w-[33%] h-full rounded-[20px] bg-elLightBg flex items-center justify-center max-445:max-h-[150px]">
           <StarIcon className={"fill-star w-[90px] h-[90px]"} />
         </div>
       )}
@@ -25,7 +26,7 @@ const EvaluationListItem = ({ item }: { item: EvaluationListItemType }) => {
           <h4 className="text-text text-[20px]">{item.title}</h4>
           <Button
             onClick={() => navigate(EVALUATION_ROUTE + "/" + item.code.value)}
-            className="text-[14px] px-[10px] py-[3px] w-min"
+            className="text-[14px] px-[10px] py-[3px] w-min max-445:hidden"
           >
             Пройти
           </Button>
@@ -47,6 +48,12 @@ const EvaluationListItem = ({ item }: { item: EvaluationListItemType }) => {
         <p className="text-text text-[16px] break-all max-h-[50px] overflow-hidden mt-[10px] line-clamp-2">
           {item.description}
         </p>
+        <Button
+          onClick={() => navigate(EVALUATION_ROUTE + "/" + item.code.value)}
+          className="hidden text-[14px] px-[10px] py-[5px] mt-[20px] max-445:block"
+        >
+          Пройти
+        </Button>
       </div>
     </li>
   );

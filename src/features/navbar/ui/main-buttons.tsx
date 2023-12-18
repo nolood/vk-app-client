@@ -26,7 +26,7 @@ const MainButtons = () => {
           Созвездия
         </Button>
       </div>
-      <Button onClick={() => navigate(EVALUATIONS_ROUTE)}>Небо</Button>
+      <Button onClick={() => navigate(EVALUATIONS_ROUTE)}>Мир</Button>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Profile = () => {
       <Header />
       <MainMascot className={"top-[210px]"} />
       <div className="w-full mt-auto z-[1] relative">
-        <Mascot className="absolute top-[-245px]" />
+        <Mascot className="absolute top-[-265px]" />
         <div className="flex items-center justify-center bg-bg py-[30px] rounded-t-[30px]  ">
           <div className="w-10/12 flex flex-col gap-[20px]">
             <Button onClick={() => router.navigate(MY_EVALUATIONS_ROUTE)}>

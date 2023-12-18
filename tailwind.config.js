@@ -3,6 +3,7 @@ module.exports = {
   content: ["./src/**/*.{tsx,ts}"],
   theme: {
     screens: {
+      "min-445": { min: "400px" },
       "max-510": { max: "510px" },
       "max-445": { max: "445px" },
       "max-400": { max: "400px" },

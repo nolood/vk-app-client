@@ -37,7 +37,7 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
   return (
     <li
       className={clsx(
-        "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden",
+        "flex flex-col w-full justify-between bg-elLightBg rounded-[20px] py-[20px] px-[20px] relative h-[74px] transition-all overflow-hidden"
       )}
       style={{
         height: activeCriterion?.id === item.id ? "520px" : "74px",
@@ -73,7 +73,11 @@ const CriterionItem = ({ item }: { item: CustomCriterion }) => {
           setComment(e.target.value)
         }
       />
-      <Button onClick={handleEvaluate} variant={"dark"}>
+      <Button
+        onClick={handleEvaluate}
+        variant={"dark"}
+        className="max-445:py-[15px]"
+      >
         Оценить
       </Button>
     </li>
